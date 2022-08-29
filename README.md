@@ -4,3 +4,4 @@
 # Troubleshooting my checking out codes
 # On project 12 now
 # just ran ansible now but jenkins didnt trigger build
+# changed some permissions
