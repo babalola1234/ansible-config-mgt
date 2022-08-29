@@ -5,3 +5,4 @@
 # On project 12 now
 # just ran ansible now but jenkins didnt trigger build
 # changed some permissions
+rm all files in artifacts
