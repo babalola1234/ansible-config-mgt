@@ -5,4 +5,4 @@
 # On project 12 now
 # just ran ansible now but jenkins didnt trigger build
 # changed some permissions
-rm all files in artifacts
+# rm all files in artifacts, now the buil was successful at this stage
