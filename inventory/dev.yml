@@ -13,3 +13,6 @@
 172.31.28.15 ansible_ssh_user='ubuntu'
 172.31.24.120 ansible_ssh_user='ubuntu'
 
+[uat-webservers]
+172.31.46.201 ansible_ssh_user='ec2-user'
+172.31.38.252 ansible_ssh_user='ec2-user'

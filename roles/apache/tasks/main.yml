@@ -41,7 +41,18 @@
   include_tasks: "configure-{{ ansible_os_family }}.yml"
 
 - name: Ensure Apache has selected state and enabled on boot.
+  become: yes
   service:
     name: "{{ apache_service }}"
     state: "{{ apache_state }}"
     enabled: "{{ apache_enabled }}"
+
+# - name: Start service httpd, if not started
+#   become: yes
+#   ansible.builtin.service:
+#     name: httpd
+#     state: started
+
+
+
+
