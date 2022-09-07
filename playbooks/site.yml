@@ -1,4 +1,5 @@
 ---
+
 - hosts: all 
 # - name: import common file
 #   import_playbook: ../static-assignments/common.yml
@@ -9,6 +10,15 @@
   import_playbook: ../dynamic-assignments/env-vars.yml
   tags:
     - always 
+=======
+- hosts: all
+- name: Include dynamic variables 
+  tasks:
+  import_playbook: ../static-assignments/common.yml 
+  include: ../dynamic-assignments/env-vars.yml
+  tags:
+    - always
+
 
 # - name: import database file
 #   import_playbook: ../static-assignments/db.yml
