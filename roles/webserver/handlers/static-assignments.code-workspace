@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "../../../../static-assignments"
+		},
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../env-vars"
+		},
+		{
+			"path": "../../../../dynamic-assignment"
+		},
+		{
+			"path": "../../../../roles"
+		}
+	],
+	"settings": {}
+}
