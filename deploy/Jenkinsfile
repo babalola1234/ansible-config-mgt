@@ -1,42 +1,46 @@
-   pipeline {
+pipeline {
     agent any
 
-  stages {
-    stage('Build') {
-      steps {
-        script {
-          sh 'echo "Building Stage"'
-        }
-      }
-    }
+    environment {
+        ANSIBLE_CONFIG="${WORKSPACE}/deploy/ansible.cfg"
+            }
 
-    stage('Test') {
-      steps {
-        script {
-          sh 'echo "Testing Stage"'
+    parameters {
+        string (name: 'inventory', defaultValue: 'dev',  description: 'This is the inventory file for the environment to deploy configuration')
         }
-      }
-    }
-     stage('Package') {
-      steps {
-        script {
-          sh 'echo "Testing Package"'
+
+    stages {
+        stage("Initial cleanup") {
+            steps {
+                dir("${WORKSPACE}") {
+                deleteDir()
+                    }
+                }
+            }
+
+        stage ('Checkout SCM') {
+            steps{
+                git branch: 'main', url: 'https://github.com/babalola1234/ansible-config.git'
+            }
         }
-      }
-    }
-     stage('Deploy') {
-      steps {
-        script {
-          sh 'echo "Testing Deploy"'
+
+        stage ('Prepare Ansible For Execution') {
+            steps {
+            sh 'echo ${WORKSPACE}' 
+            sh 'sed -i "3 a roles_path=${WORKSPACE}/roles" ${WORKSPACE}/deploy/ansible.cfg'  
+            }
         }
-      }
-    }
-     stage('Clean up') {
-      steps {
-        script {
-          sh 'echo "Testing Clean Up"'
+
+        stage ('Run Ansible playbook') {
+            steps {
+            ansiblePlaybook become: true, colorized: true, credentialsId: 'LAMP-SERVER', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory/dev', playbook: 'playbooks/site.yml'
+            }
         }
-      }
-    }
+
+        stage ('Clean Workspace after build') {
+            steps {
+            cleanWs(cleanWhenAborted: true, cleanWhenFailure: true, cleanWhenNotBuilt: true, cleanWhenUnstable: true, deleteDirs: true)
+            }
+        }
     }
 }
