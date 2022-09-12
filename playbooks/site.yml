@@ -1,4 +1,14 @@
 ---
+- hosts: db
+- name: database assignment
+  ansbible.builtin.import_playbook: ../static-assignments/db.yml
+
+- hosts: nginx
+- name: nginx assignment
+  ansbible.builtin.import_playbook: ../static-assignments/nginx.yml
+
+
+
 
 - hosts: all 
 # - name: import common file
@@ -6,18 +16,18 @@
 #   tags:
 #    - always 
 
-- name: include env-vars file
-  import_playbook: ../dynamic-assignments/env-vars.yml
-  tags:
-    - always 
-=======
-- hosts: all
-- name: Include dynamic variables 
-  tasks:
-  import_playbook: ../static-assignments/common.yml 
-  include: ../dynamic-assignments/env-vars.yml
-  tags:
-    - always
+# - name: include env-vars file
+#   import_playbook: ../dynamic-assignments/env-vars.yml
+#   tags:
+#     - always 
+# =======
+# - hosts: all
+# - name: Include dynamic variables 
+#   tasks:
+#   import_playbook: ../static-assignments/common.yml 
+#   include: ../dynamic-assignments/env-vars.yml
+#   tags:
+#     - always
 
 
 # - name: import database file
@@ -30,7 +40,7 @@
 #   tags:
 #    - always 
 
-- name: import loadbalancers file
-  import_playbook: ../static-assignments/loadbalancers.yml
-  when: load_balancer_is_required
+# - name: import loadbalancers file
+#   import_playbook: ../static-assignments/loadbalancers.yml
+#   when: load_balancer_is_required
   
