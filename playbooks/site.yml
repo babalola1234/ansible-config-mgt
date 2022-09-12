@@ -1,9 +1,11 @@
 ---
 - hosts: db
+  become: yes
 - name: database assignment
   ansible.builtin.import_playbook: ../static-assignments/database.yml
 
 - hosts: nginx
+  become: yes
 - name: nginx assignment
   ansible.builtin.import_playbook: ../static-assignments/nginx.yml
 
