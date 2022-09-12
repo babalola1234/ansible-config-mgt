@@ -86,7 +86,8 @@
   #  import_playbook: ../static-assignments/loadbalancers.yml
   #when: load_balancer_is_required
 
-  Dependences to be installed
+ 
+ ###  Dependences to be installed
 ====================================
 
 yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
@@ -371,3 +372,32 @@ pipeline {
         }
     }
 }
+
+
+### Dev inventory 
+====================================
+[nfs]
+172.31.10.217 ansible_ssh_user='ec2-user'
+
+[webservers]
+172.31.0.203 ansible_ssh_user='ec2-user'
+172.31.4.172 ansible_ssh_user='ec2-user'
+172.31.2.22  ansible_ssh_user='ec2-user'
+
+[db]
+172.31.9.56  ansible_ssh_user='ubuntu'
+
+[lb]
+172.31.28.15 ansible_ssh_user='ubuntu'
+172.31.24.120 ansible_ssh_user='ubuntu'
+
+[uat-webservers]
+172.31.46.201 ansible_ssh_user='ec2-user'
+172.31.38.252 ansible_ssh_user='ec2-user'
+
+[uat-lb]
+172.31.46.201 ansible_ssh_user='ec2-user'
+172.31.38.252 ansible_ssh_user='ec2-user'
+
+[nginx]
+172.31.28.15 ansible_ssh_user='ubuntu'
