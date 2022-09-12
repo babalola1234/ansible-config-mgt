@@ -1,16 +1,16 @@
 ---
 - hosts: db
 - name: database assignment
-  ansbible.builtin.import_playbook: ../static-assignments/db.yml
+  ansible.builtin.import_playbook: ../static-assignments/db.yml
 
 - hosts: nginx
 - name: nginx assignment
-  ansbible.builtin.import_playbook: ../static-assignments/nginx.yml
+  ansible.builtin.import_playbook: ../static-assignments/nginx.yml
 
 
 
 
-- hosts: all 
+#- hosts: all 
 # - name: import common file
 #   import_playbook: ../static-assignments/common.yml
 #   tags:
