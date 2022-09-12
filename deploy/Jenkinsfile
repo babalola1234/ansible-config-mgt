@@ -20,7 +20,7 @@ pipeline {
 
         stage ('Checkout SCM') {
             steps{
-                git branch: 'feature/Jenkins-pipeline-new-task', url: 'https://github.com/babalola1234/ansible-config-mgt.git'
+                git branch: '/feature/Jenkins-pipeline-new-task', url: 'https://github.com/babalola1234/ansible-config-mgt.git'
             }
         }
 
