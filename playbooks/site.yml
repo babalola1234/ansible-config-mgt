@@ -9,7 +9,7 @@
 
 - hosts: artifactory
 - name: artifactory assignment
-  import_playbook: ../static-assignments/artifactory.yml
+  ansible.builtin.import_playbook: ../static-assignments/artifactory.yml
 
 
 
