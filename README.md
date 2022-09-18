@@ -1,4 +1,4 @@
-# Ansible dependencies to install
+### Ansible dependencies to install
 =================================
 * For Mysql Database 
 - ansible-galazy collection install community.mysql
@@ -6,7 +6,7 @@
 * For Postgresql database 
 - ansible-galazy collection install commuinity.mysql
 
-# installing JAVA
+### installing JAVA
 =================
 - sudo yum install java-11openjdk-devel -y
 
@@ -133,12 +133,12 @@ ansible-galaxy collection install community.postgresql
 Install composer
 =====================================
 
-curl -sS https://getcomposer.org/installer | php
-sudo mv composer.phar /usr/bin/composer
-Verify Composer is installed or not
-composer --version
+` curl -sS https://getcomposer.org/installer | php `
+` sudo mv composer.phar /usr/bin/composer ` 
+- Verify Composer is installed or not
+` composer --version `
 
-# Install phpunit, phploc
+### Install phpunit, phploc
 =====================================
 
 sudo dnf --enablerepo=remi install php-phpunit-phploc
@@ -147,7 +147,7 @@ chmod +x phpunit
 sudo yum install php-xdebug
 
 
-# for database connection
+### for database connection
 ==================================== 
 
 DB_CONNECTION=mysql DB_PORT=3306
@@ -158,7 +158,7 @@ Learn how to install Jenkins here
 
 Learn how to installk artifactory here
 
-JEnkinsfile for Quick Task
+### Jenkinsfile for Quick Task
 ==================================
 
   pipeline {
@@ -214,12 +214,12 @@ JEnkinsfile for Quick Task
     }
 }
 
-# sonar properties
+### sonar properties
 =================================== 
 sonar.host.url=http://3.125.17.131:9000/sonar/ sonar.projectKey=php-todo 
 #----- Default source code encoding sonar.sourceEncoding=UTF-8 sonar.php.exclusions=/vendor/ sonar.php.coverage.reportPaths=build/logs/clover.xml sonar.php.tests.reportPath=build/logs/junit.xml
 
-# Jenkinsfile for PHP Todo Job
+### Jenkinsfile for PHP Todo Job
 ===================================== 
 
 pipeline 
@@ -323,7 +323,7 @@ stage ('Deploy to Dev Environment') { steps { build job: 'ansible-config/main', 
 }
 
 
-#### jenkind from  scracth 
+#### jenkins from  scracth 
 ==================================
 
 pipeline {

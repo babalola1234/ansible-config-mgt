@@ -3,3 +3,4 @@
 
 [nginx]
 172.31.28.15 ansible_ssh_user='ubuntu'
+
