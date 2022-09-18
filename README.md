@@ -133,10 +133,10 @@ ansible-galaxy collection install community.postgresql
 Install composer
 =====================================
 
-curl -sS https://getcomposer.org/installer | php
-sudo mv composer.phar /usr/bin/composer
-Verify Composer is installed or not
-composer --version
+` curl -sS https://getcomposer.org/installer | php `
+` sudo mv composer.phar /usr/bin/composer ` 
+- Verify Composer is installed or not
+` composer --version `
 
 ### Install phpunit, phploc
 =====================================
