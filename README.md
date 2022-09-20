@@ -125,10 +125,10 @@ systemctl enable php-fpm
 Ansible dependencies to install
 =====================================
 
-For Mysql Database
-ansible-galaxy collection install community.mysql
-For Postgresql Database
-ansible-galaxy collection install community.postgresql
+*  For Mysql Database
+- ansible-galaxy collection install community.mysql
+*  For Postgresql Database
+- ansible-galaxy collection install community.postgresql
 
 Install composer for PHP
 =====================================
