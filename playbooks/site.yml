@@ -3,13 +3,13 @@
 # - name: database assignment
 #   import_playbook: ../static-assignments/database.yml
 
-- hosts: todo
-- name: Deploy the todo appliction
-  import_playbook: ../static-assignments/deployment.yml
+# - hosts: todo
+# - name: Deploy the todo appliction
+#   import_playbook: ../static-assignments/deployment.yml
 
-# - hosts: sonar
-# - name: sonar assignment
-#   import_playbook: ../static-assignments/soanr.yml
+- hosts: sonar
+- name:  sonar assignment
+  import_playbook: ../static-assignments/sonar.yml
 
 # - hosts: nginx
 # - name: nginx assignment
