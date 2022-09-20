@@ -130,7 +130,7 @@ ansible-galaxy collection install community.mysql
 For Postgresql Database
 ansible-galaxy collection install community.postgresql
 
-Install composer
+Install composer for PHP
 =====================================
 
 ` curl -sS https://getcomposer.org/installer | php `
@@ -138,7 +138,7 @@ Install composer
 - Verify Composer is installed or not
 ` composer --version `
 
-### Install phpunit, phploc
+### Install phpunit, phploc for PHP on Redhat
 =====================================
 
 sudo dnf --enablerepo=remi install php-phpunit-phploc
@@ -146,18 +146,30 @@ wget -O phpunit https://phar.phpunit.de/phpunit-7.phar
 chmod +x phpunit
 sudo yum install php-xdebug
 
+### Install phpunit, phploc for PHP on ubuntu
+============================================
+- sudo apt update
+- sudo apt install phploc
+- sudo apt-get install -y phpunit-version
 
-### for database connection
+### Uninstall / Remove phploc package on ubuntu
+
+- sudo apt remove phploc
+- sudo apt autoclean && sudo apt autoremove
+
+### for database connection for PHP
 ==================================== 
 
-DB_CONNECTION=mysql DB_PORT=3306
+DB_CONNECTION=mysql 
+DB_PORT=3306
 
-sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf sudo yum install mysql -y
+- sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf 
 
-Learn how to install Jenkins here
+- sudo yum install mysql -y
 
-Learn how to installk artifactory here
+### instalatio of zip file
 
+- sudo apt install zip
 ### Jenkinsfile for Quick Task
 ==================================
 
