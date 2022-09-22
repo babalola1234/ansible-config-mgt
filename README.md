@@ -413,3 +413,37 @@ pipeline {
 
 [nginx]
 172.31.28.15 ansible_ssh_user='ubuntu'
+
+### ansible user add
+# - name: "Create SonarQube system group"
+#   group:
+#     name: sonar
+#     state: present
+
+# - name: "Create SonarQube system user"
+#   user:
+#     name: sonar
+#     comment: "user to run SonarQube"
+#     state: present
+
+# - name: Create Folder
+#   file: 
+#     path: /opt/sonarqube
+#     owner: sonar
+#     group: sonar
+#     state: directory
+
+
+### buntu@ip-172-31-22-8:~/ansible-config-mgt$ ansible-playbook -i inventory/ci.yml playbooks/site.yml 
+--- 
+<!-- ERROR! the role 'sonarqube' was not found in /home/ubuntu/ansible-config-mgt/playbooks/../static-assignments/roles:/home/ubuntu/.ansible/roles:/usr/share/ansible/roles:/etc/ansible/roles:/home/ubuntu/ansible-config-mgt/playbooks/../static-assignments
+
+The error appears to be in '/home/ubuntu/ansible-config-mgt/static-assignments/sonar.yml': line 5, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  roles:
+    - sonarqube
+      ^ here
+ubuntu@ip-172-31-22-8:~/ansible-config-mgt$ export ANSIBLE_CONFIG=/home/ubuntu/ansible-config-mgt/deploy/ansible.cfg --> ### the the export command if you encounter the above error.
