@@ -16,11 +16,11 @@
     state: directory
     mode: '0755'
 
-# - name: Extract the zip file
-#   ansible.builtin.unarchive:
-#     src: /opt/sonarqube-7.9.3.zip
-#     dest: /opt/
-#     remote_src: yes
+- name: Extract the zip file
+  ansible.builtin.unarchive:
+    src: /opt/sonarqube-7.9.3.zip
+    dest: /opt/
+    remote_src: yes
 
 - name: Copy /opt/sonarqube/
   ansible.builtin.copy:
@@ -34,8 +34,8 @@
     path: /opt/sonarqube-7.9.3.zip
     state: absent
 
-# - name: add user to run sonar
-#   ansible.builtin.shell: useradd -c "user to run SonarQube" -d /opt/sonarqube -g sonar sonar 
+- name: add user to run sonar
+  ansible.builtin.shell: useradd -c "user to run SonarQube" -d /opt/sonarqube -g sonar sonar 
 
 - name: change ownership
   ansible.builtin.shell: chown sonar:sonar /opt/sonarqube -R
